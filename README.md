@@ -8,6 +8,8 @@ I already have 100 million ,The “I Already Have 100 Million” Joke Series.
 
 页面最下面添加上， 
 
+eaco TOKEN 2049 ,
+
 DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH，
 
 图片风格为港风动漫.
