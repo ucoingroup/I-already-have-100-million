@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>一千万美元的显化 · 100 句肯定语</title>
+<style>
+  :root {
+    --paper: #faf7f0;
+    --ink: #1c1917;
+    --body: #44403c;
+    --muted: #78716c;
+    --hairline: rgba(28, 25, 23, 0.14);
+    --accent: #8a6d3b;
+    --serif-cn: "Songti SC", "Noto Serif SC", "STSong", "SimSun", serif;
+    --serif-en: Georgia, "Times New Roman", serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--body);
+    font-family: var(--serif-cn);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+  main { max-width: 720px; margin: 0 auto; }
+
+  .cover { padding: 96px 0 56px; border-bottom: 1px solid var(--hairline); }
+  .kicker {
+    font-family: var(--serif-en);
+    font-size: 12px; letter-spacing: 0.18em;
+    color: var(--accent); text-transform: uppercase; margin-bottom: 28px;
+  }
+  .cover h1 {
+    font-size: 58px; font-weight: 600; line-height: 1.12;
+    letter-spacing: -0.02em; color: var(--ink); margin-bottom: 18px;
+  }
+  .cover .sub { font-size: 19px; color: var(--muted); margin-bottom: 44px; }
+  .cover .amount {
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 34px; letter-spacing: 0.01em;
+    color: var(--accent); margin-bottom: 44px;
+  }
+  .cover .meta {
+    display: flex; gap: 28px;
+    font-family: var(--serif-en);
+    font-size: 12.5px; letter-spacing: 0.06em; color: var(--muted);
+  }
+
+  .howto { padding: 56px 0; border-bottom: 1px solid var(--hairline); }
+  .howto h2 { font-size: 22px; font-weight: 600; color: var(--ink); letter-spacing: 0.02em; margin-bottom: 18px; }
+  .howto p { margin-bottom: 14px; }
+  .howto .steps { margin: 24px 0 0; }
+  .howto .step {
+    padding: 14px 0; border-top: 1px solid var(--hairline);
+    display: flex; gap: 18px; align-items: baseline;
+  }
+  .howto .step .no { font-family: var(--serif-en); font-size: 13px; color: var(--muted); min-width: 26px; }
+  .howto .step strong { color: var(--ink); font-weight: 590; margin-right: 8px; }
+  .howto .note { margin-top: 26px; font-size: 14.5px; color: var(--muted); font-style: italic; }
+
+  section.chapter { padding: 72px 0 24px; }
+  .ch-kicker {
+    font-family: var(--serif-en); font-size: 12px;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 10px;
+  }
+  .ch-rule { width: 36px; height: 1px; background: var(--accent); margin-bottom: 22px; }
+  section.chapter h2 {
+    font-size: 30px; font-weight: 600; letter-spacing: 0.01em;
+    color: var(--ink); margin-bottom: 10px;
+  }
+  .ch-intro { font-size: 15px; font-style: italic; color: var(--muted); margin-bottom: 30px; }
+
+  ol.lines { list-style: none; }
+  ol.lines li {
+    display: flex; gap: 20px; align-items: baseline;
+    padding: 15px 0; border-top: 1px solid var(--hairline);
+  }
+  ol.lines .no {
+    font-family: var(--serif-en); font-size: 13px;
+    color: var(--muted); min-width: 30px; letter-spacing: 0.04em;
+  }
+  ol.lines .line { font-size: 19px; line-height: 1.55; color: var(--ink); }
+
+  .colophon {
+    margin-top: 80px; padding: 40px 0 64px;
+    border-top: 1px solid var(--hairline);
+    font-size: 13.5px; color: var(--muted); line-height: 1.7;
+  }
+  .colophon .fin {
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 15px; color: var(--ink); margin-bottom: 12px;
+  }
+
+  .toc-side { display: none; }
+  @media (min-width: 1180px) {
+    .layout { display: grid; grid-template-columns: 208px minmax(0, 720px); gap: 56px; justify-content: center; align-items: start; }
+    .toc-side {
+      display: block; position: sticky; top: 0; align-self: start;
+      height: 100vh; padding-top: 150px; border-right: 1px solid var(--hairline);
+    }
+    .toc-side .toc { padding: 0 24px 0 0; border: none; }
+    .toc-side h2 { font-size: 13px; font-weight: 590; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 12px; }
+    .toc-side ol { list-style: none; }
+    .toc-side li a { display: flex; gap: 10px; align-items: baseline; padding: 4px 0; font-size: 13.5px; color: var(--body); text-decoration: none; }
+    .toc-side li a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+    .toc-side .n { font-family: var(--serif-en); font-size: 12px; color: var(--muted); min-width: 20px; }
+    .toc-inline { display: none; }
+  }
+  nav.toc-inline { padding: 48px 0; border-bottom: 1px solid var(--hairline); }
+  nav.toc-inline h2 { font-size: 13px; font-weight: 590; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 16px; }
+  nav.toc-inline ol { list-style: none; }
+  nav.toc-inline li a { display: flex; gap: 14px; align-items: baseline; padding: 7px 0; color: var(--body); text-decoration: none; }
+  nav.toc-inline li a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+  nav.toc-inline .n { font-family: var(--serif-en); font-size: 12.5px; color: var(--muted); min-width: 24px; }
+
+  @media (max-width: 640px) {
+    .cover { padding: 64px 0 40px; }
+    .cover h1 { font-size: 40px; }
+    .cover .amount { font-size: 26px; }
+    section.chapter { padding-top: 56px; }
+    ol.lines .line { font-size: 17.5px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+<div class="layout">
+
+<nav class="toc-side" aria-label="章节目录">
+  <div class="toc">
+    <h2>十章</h2>
+    <ol>
+      <li><a href="#ch1"><span class="n">01</span>财富心态</a></li>
+      <li><a href="#ch2"><span class="n">02</span>值得与配得</a></li>
+      <li><a href="#ch3"><span class="n">03</span>金钱观</a></li>
+      <li><a href="#ch4"><span class="n">04</span>视觉化的力量</a></li>
+      <li><a href="#ch5"><span class="n">05</span>行动与机会</a></li>
+      <li><a href="#ch6"><span class="n">06</span>感恩</a></li>
+      <li><a href="#ch7"><span class="n">07</span>事业与创造</a></li>
+      <li><a href="#ch8"><span class="n">08</span>给予与流动</a></li>
+      <li><a href="#ch9"><span class="n">09</span>内在状态与平衡</a></li>
+      <li><a href="#ch10"><span class="n">10</span>宣言与未来</a></li>
+    </ol>
+  </div>
+</nav>
+
+<main>
+
+  <header class="cover">
+    <div class="kicker">Manifest · 显化手册 · 二版</div>
+    <h1>一千万美元的显化</h1>
+    <p class="sub">100 句肯定语,把"够得着的丰盛"念进日常。</p>
+    <p class="amount">$10,000,000</p>
+    <div class="meta">
+      <span>2026 年 10 月</span>
+      <span>壹佰句</span>
+      <span>拾章</span>
+    </div>
+  </header>
+
+  <section class="howto">
+    <h2>如何使用这本手册</h2>
+    <p>一千万不是遥远的传说,而是一个可以拆解的目标:一套无贷的房子、一份被动收入、一段不被账单绑架的人生。这本手册做的,是每天把这样的画面放回你眼前一遍。</p>
+    <div class="steps">
+      <div class="step"><span class="no">一</span><span><strong>晨读</strong>睁眼后,朗读当日章节的 10 句,出声,慢一点。</span></div>
+      <div class="step"><span class="no">二</span><span><strong>书写</strong>挑一句抄在纸上,贴在会反复看到的地方。</span></div>
+      <div class="step"><span class="no">三</span><span><strong>视觉化</strong>闭眼五分钟,具体地"住进"目标实现后的那一天。</span></div>
+      <div class="step"><span class="no">四</span><span><strong>行动</strong>睡前写下今天为它做的一件实事——哪怕很小。</span></div>
+    </div>
+    <p class="note">信念负责指出方向,行动负责走完距离。两者同频,显化才开始计时。</p>
+  </section>
+
+  <nav class="toc toc-inline" aria-label="章节目录">
+    <h2>目录 · 拾章</h2>
+    <ol>
+      <li><a href="#ch1"><span class="n">01</span>财富心态</a></li>
+      <li><a href="#ch2"><span class="n">02</span>值得与配得</a></li>
+      <li><a href="#ch3"><span class="n">03</span>金钱观</a></li>
+      <li><a href="#ch4"><span class="n">04</span>视觉化的力量</a></li>
+      <li><a href="#ch5"><span class="n">05</span>行动与机会</a></li>
+      <li><a href="#ch6"><span class="n">06</span>感恩</a></li>
+      <li><a href="#ch7"><span class="n">07</span>事业与创造</a></li>
+      <li><a href="#ch8"><span class="n">08</span>给予与流动</a></li>
+      <li><a href="#ch9"><span class="n">09</span>内在状态与平衡</a></li>
+      <li><a href="#ch10"><span class="n">10</span>宣言与未来</a></li>
+    </ol>
+  </nav>
+
+  <!-- 第一章 -->
+  <section class="chapter" id="ch1">
+    <div class="ch-kicker">Chapter 01</div>
+    <div class="ch-rule"></div>
+    <h2>财富心态</h2>
+    <p class="ch-intro">一千万不是奇迹,是一个方向正确的复利故事。</p>
+    <ol class="lines">
+      <li><span class="no">01</span><span class="line">一千万美元是我人生计划的一部分,不是白日梦。</span></li>
+      <li><span class="no">02</span><span class="line">我相信慢慢变富,也相信自己终将富有。</span></li>
+      <li><span class="no">03</span><span class="line">我的注意力放在机会上,而非障碍上。</span></li>
+      <li><span class="no">04</span><span class="line">财富喜欢清醒的头脑,我每天保持清醒。</span></li>
+      <li><span class="no">05</span><span class="line">我不是在等待暴富,我是在建造财富。</span></li>
+      <li><span class="no">06</span><span class="line">每一块钱都是我的员工,我负责让它们招来更多。</span></li>
+      <li><span class="no">07</span><span class="line">我谈论未来时语气笃定,像谈论已发生的事。</span></li>
+      <li><span class="no">08</span><span class="line">丰富的人生不止一种模样,我选长期主义这一种。</span></li>
+      <li><span class="no">09</span><span class="line">我配得上大数字,也驾驭得了小数字。</span></li>
+      <li><span class="no">10</span><span class="line">今天的一小步,正在把一千万拉向我。</span></li>
+    </ol>
+  </section>
+
+  <!-- 第二章 -->
+  <section class="chapter" id="ch2">
+    <div class="ch-kicker">Chapter 02</div>
+    <div class="ch-rule"></div>
+    <h2>值得与配得</h2>
+    <p class="ch-intro">口袋装不下一千万,心先要装得下。</p>
+    <ol class="lines">
+      <li><span class="no">11</span><span class="line">我心里的容器,正随着每一次练习变大。</span></li>
+      <li><span class="no">12</span><span class="line">我不再道歉式地活着,我大方地接受好东西。</span></li>
+      <li><span class="no">13</span><span class="line">我的价值不由工资单定义,由我创造的意义定义。</span></li>
+      <li><span class="no">14</span><span class="line">我允许好事情发生在我身上,而且频繁发生。</span></li>
+      <li><span class="no">15</span><span class="line">别人的成功不叫我恐慌,叫我相信可能。</span></li>
+      <li><span class="no">16</span><span class="line">我值得被好好报价,也值得好好付款。</span></li>
+      <li><span class="no">17</span><span class="line">我放下"省一点是一点"的紧绷,练习"赚一点是一点"的舒展。</span></li>
+      <li><span class="no">18</span><span class="line">我把自己当成值得投资的资产。</span></li>
+      <li><span class="no">19</span><span class="line">我的配得感每天增长,与账户余额同步。</span></li>
+      <li><span class="no">20</span><span class="line">够得着的丰盛,我张开双手接住。</span></li>
+    </ol>
+  </section>
+
+  <!-- 第三章 -->
+  <section class="chapter" id="ch3">
+    <div class="ch-kicker">Chapter 03</div>
+    <div class="ch-rule"></div>
+    <h2>金钱观</h2>
+    <p class="ch-intro">一千万是一万个一万,我尊重每一个一万。</p>
+    <ol class="lines">
+      <li><span class="no">21</span><span class="line">我善待小钱,大钱才愿意托付给我。</span></li>
+      <li><span class="no">22</span><span class="line">我的每一笔支出,都是一次投票,投给我想要的生活。</span></li>
+      <li><span class="no">23</span><span class="line">我清楚自己的钱去了哪里,钱也清楚要来找我。</span></li>
+      <li><span class="no">24</span><span class="line">我不羞于谈钱,钱是价值的度量衡。</span></li>
+      <li><span class="no">25</span><span class="line">我让钱先流动起来,再安静地沉淀。</span></li>
+      <li><span class="no">26</span><span class="line">债务是我的工具,不是我的主人。</span></li>
+      <li><span class="no">27</span><span class="line">我为现金流传造管道,不为工资等待发薪日。</span></li>
+      <li><span class="no">28</span><span class="line">我的钱包是城市的地图,记录我创造的价值。</span></li>
+      <li><span class="no">29</span><span class="line">钱在我手里会变得更好,这是我的信誉。</span></li>
+      <li><span class="no">30</span><span class="line">我敬畏金钱的规律,像敬畏季节与潮汐。</span></li>
+    </ol>
+  </section>
+
+  <!-- 第四章 -->
+  <section class="chapter" id="ch4">
+    <div class="ch-kicker">Chapter 04</div>
+    <div class="ch-rule"></div>
+    <h2>视觉化的力量</h2>
+    <p class="ch-intro">一千万的生活是什么样?越具体,越接近。</p>
+    <ol class="lines">
+      <li><span class="no">31</span><span class="line">我看见还清最后一笔房贷的那天,阳光很好。</span></li>
+      <li><span class="no">32</span><span class="line">我闻得到财务自由那个早晨的咖啡香。</span></li>
+      <li><span class="no">33</span><span class="line">我每天都在心里住进未来的家。</span></li>
+      <li><span class="no">34</span><span class="line">我把年度目标贴在镜子上,天天和它对视。</span></li>
+      <li><span class="no">35</span><span class="line">我在脑中预演谈判成功,直到紧张变成平常。</span></li>
+      <li><span class="no">36</span><span class="line">我看见被动收入的曲线,温和而坚定地上扬。</span></li>
+      <li><span class="no">37</span><span class="line">未来不是等来的画面,是我每天描一笔的画。</span></li>
+      <li><span class="no">38</span><span class="line">我的想象力先到,我的脚步就会跟上。</span></li>
+      <li><span class="no">39</span><span class="line">睡前最后一帧画面,留给实现后的那一天。</span></li>
+      <li><span class="no">40</span><span class="line">细节是显化的坐标,我说得越细,走得越准。</span></li>
+    </ol>
+  </section>
+
+  <!-- 第五章 -->
+  <section class="chapter" id="ch5">
+    <div class="ch-kicker">Chapter 05</div>
+    <div class="ch-rule"></div>
+    <h2>行动与机会</h2>
+    <p class="ch-intro">一千万是一步一步走出来的,宇宙喜欢记账。</p>
+    <ol class="lines">
+      <li><span class="no">41</span><span class="line">我做完今天的事,机会明天自然来敲门。</span></li>
+      <li><span class="no">42</span><span class="line">我不再等准备好,我先开始,再变好。</span></li>
+      <li><span class="no">43</span><span class="line">每一个尴尬的开始,都是未来的里程碑。</span></li>
+      <li><span class="no">44</span><span class="line">我把大目标切成小任务,小任务今天就能完成。</span></li>
+      <li><span class="no">45</span><span class="line">我主动开口,世界的反应比想象中友善。</span></li>
+      <li><span class="no">46</span><span class="line">我坚持得越久,竞争对手越少。</span></li>
+      <li><span class="no">47</span><span class="line">我的技能每精进一寸,收入的天花板就抬高一分。</span></li>
+      <li><span class="no">48</span><span class="line">我感谢每一次拒绝,它们在为我筛选方向。</span></li>
+      <li><span class="no">49</span><span class="line">行动是最好的祈祷,我边祈祷边动手。</span></li>
+      <li><span class="no">50</span><span class="line">复利需要时间,我给足时间,也给足行动。</span></li>
+    </ol>
+  </section>
+
+  <!-- 第六章 -->
+  <section class="chapter" id="ch6">
+    <div class="ch-kicker">Chapter 06</div>
+    <div class="ch-rule"></div>
+    <h2>感恩</h2>
+    <p class="ch-intro">先为已有的一切鼓掌,新的才会入场。</p>
+    <ol class="lines">
+      <li><span class="no">51</span><span class="line">我从拥有的东西里,看见丰盛的形状。</span></li>
+      <li><span class="no">52</span><span class="line">感恩不是安慰,是我与世界对齐的频率。</span></li>
+      <li><span class="no">53</span><span class="line">我感谢过去的自己攒下的每一分底气。</span></li>
+      <li><span class="no">54</span><span class="line">一顿热饭、一张床、一次健康的呼吸,都是财富。</span></li>
+      <li><span class="no">55</span><span class="line">我数得清自己的好,所以 attracts 更多的好。</span></li>
+      <li><span class="no">56</span><span class="line">抱怨是漏财的洞,我把它缝上,换成谢谢。</span></li>
+      <li><span class="no">57</span><span class="line">我感谢正在路上的钱,也感谢正在路上的我。</span></li>
+      <li><span class="no">58</span><span class="line">今天所有,已是我应得的起点。</span></li>
+      <li><span class="no">59</span><span class="line">我提前感谢那一千万,像感谢即将到站的列车。</span></li>
+      <li><span class="no">60</span><span class="line">每一个清晨的第一句话,是谢谢。</span></li>
+    </ol>
+  </section>
+
+  <!-- 第七章 -->
+  <section class="chapter" id="ch7">
+    <div class="ch-kicker">Chapter 07</div>
+    <div class="ch-rule"></div>
+    <h2>事业与创造</h2>
+    <p class="ch-intro">一千万的背面,写着我为世界创造的价值。</p>
+    <ol class="lines">
+      <li><span class="no">61</span><span class="line">我的收入,是我解决问题的标价。</span></li>
+      <li><span class="no">62</span><span class="line">我把手艺磨利,市场自然递来订单。</span></li>
+      <li><span class="no">63</span><span class="line">我的作品替我说话,我的名声替我带路。</span></li>
+      <li><span class="no">64</span><span class="line">我敢于涨价,因为我的价值一直在长。</span></li>
+      <li><span class="no">65</span><span class="line">我建造能自己运转的小系统,让钱替我上班。</span></li>
+      <li><span class="no">66</span><span class="line">每一次学习,都在给我的事业加杠杆。</span></li>
+      <li><span class="no">67</span><span class="line">我的客户不是我的恩人,是我的合伙人。</span></li>
+      <li><span class="no">68</span><span class="line">我做的事,值得被更多人看见。</span></li>
+      <li><span class="no">69</span><span class="line">我把热爱铸成手艺,把手艺铸成事业。</span></li>
+      <li><span class="no">70</span><span class="line">一千万不是终点,是我创造价值的累计刻度。</span></li>
+    </ol>
+  </section>
+
+  <!-- 第八章 -->
+  <section class="chapter" id="ch8">
+    <div class="ch-kicker">Chapter 08</div>
+    <div class="ch-rule"></div>
+    <h2>给予与流动</h2>
+    <p class="ch-intro">一千万的意义,在于流经我时照亮了谁。</p>
+    <ol class="lines">
+      <li><span class="no">71</span><span class="line">我的手是打开的,祝福进得来,也出得去。</span></li>
+      <li><span class="no">72</span><span class="line">我给小费时慷慨,我给帮助时痛快。</span></li>
+      <li><span class="no">73</span><span class="line">我乐于让别人从我这里赚到钱。</span></li>
+      <li><span class="no">74</span><span class="line">我付清账单时心怀敬意,那是对服务的感谢。</span></li>
+      <li><span class="no">75</span><span class="line">我分享知识从不打折,知识越给越多。</span></li>
+      <li><span class="no">76</span><span class="line">我做金钱的园丁,让它流到该开花的地方。</span></li>
+      <li><span class="no">77</span><span class="line">我祝福他人的财富,像祝福明天的自己。</span></li>
+      <li><span class="no">78</span><span class="line">我的价值在给予中确认,不在囤积中。</span></li>
+      <li><span class="no">79</span><span class="line">因为我的存在,有人过得更好了一点。</span></li>
+      <li><span class="no">80</span><span class="line">流出去的每一份善意,都在回来的路上。</span></li>
+    </ol>
+  </section>
+
+  <!-- 第九章 -->
+  <section class="chapter" id="ch9">
+    <div class="ch-kicker">Chapter 09</div>
+    <div class="ch-rule"></div>
+    <h2>内在状态与平衡</h2>
+    <p class="ch-intro">追钱追得太紧,钱会喘不过气。</p>
+    <ol class="lines">
+      <li><span class="no">81</span><span class="line">我散步、睡觉、好好吃饭——财富喜欢松弛的人。</span></li>
+      <li><span class="no">82</span><span class="line">我不拿自己的第三章,去比别人的第十章。</span></li>
+      <li><span class="no">83</span><span class="line">焦虑是财富的反频率,我一察觉就深呼吸。</span></li>
+      <li><span class="no">84</span><span class="line">我的价值Yesterday在,今天在,和数字无关。</span></li>
+      <li><span class="no">85</span><span class="line">我允许自己休息,休息也是建造的一部分。</span></li>
+      <li><span class="no">86</span><span class="line">健康是本金的本金,我按时支付给它。</span></li>
+      <li><span class="no">87</span><span class="line">家人围坐的光,比账户的数字更亮。</span></li>
+      <li><span class="no">88</span><span class="line">我慢慢地富,稳稳地乐。</span></li>
+      <li><span class="no">89</span><span class="line">心是土壤,钱是雨水,土壤肥沃,雨水自来。</span></li>
+      <li><span class="no">90</span><span class="line">我在平静里做决定,在热爱里做事业。</span></li>
+    </ol>
+  </section>
+
+  <!-- 第十章 -->
+  <section class="chapter" id="ch10">
+    <div class="ch-kicker">Chapter 10</div>
+    <div class="ch-rule"></div>
+    <h2>宣言与未来</h2>
+    <p class="ch-intro">最后十句,签下自己的名字。</p>
+    <ol class="lines">
+      <li><span class="no">91</span><span class="line">我宣布:一千万美元正沿着正确的路径向我走来。</span></li>
+      <li><span class="no">92</span><span class="line">它来的方式,比我设计的更聪明。</span></li>
+      <li><span class="no">93</span><span class="line">我签收未来,从今天的第一个行动开始。</span></li>
+      <li><span class="no">94</span><span class="line">我是自己财富故事的第一作者。</span></li>
+      <li><span class="no">95</span><span class="line">十年后的我,正在替现在的我高兴。</span></li>
+      <li><span class="no">96</span><span class="line">我不求一夜改变,我求每天一寸。</span></li>
+      <li><span class="no">97</span><span class="line">丰盛早已存在,我只是在认领我的那份。</span></li>
+      <li><span class="no">98</span><span class="line">我不说"要是就好了",我说"到那时"。</span></li>
+      <li><span class="no">99</span><span class="line">一千万是我自由的工具,不是我的笼子。</span></li>
+      <li><span class="no">100</span><span class="line">此刻的我,已经足够,并且正在更多。</span></li>
+    </ol>
+  </section>
+
+  <footer class="colophon">
+    <p class="fin">— 一千万,是一万次认真的复利。 —</p>
+    <p>《一千万美元的显化》· 100 句肯定语手册(二版)· 2026 年 10 月。本手册为个人成长与自我对话工具,所有句子供朗读与书写使用;财富的实现仍需真实世界的判断、努力与耐心。原版《一亿美元的显化》保留于同目录,两版可对照使用。由 eaco SGD + MYR overseas group 编制
+
+eaco CA: DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH </p>
+  </footer>
+
+</main>
+
+</div>
+</div>
+</body>
+</html>
