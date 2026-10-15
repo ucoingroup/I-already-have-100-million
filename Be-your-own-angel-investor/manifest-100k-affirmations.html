@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>十万美元的显化 · 白话版 100 句</title>
+<style>
+  :root {
+    --paper: #faf7f0;
+    --ink: #1c1917;
+    --body: #44403c;
+    --muted: #78716c;
+    --hairline: rgba(28, 25, 23, 0.14);
+    --accent: #8a6d3b;
+    --serif-cn: "Songti SC", "Noto Serif SC", "STSong", "SimSun", serif;
+    --serif-en: Georgia, "Times New Roman", serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--body);
+    font-family: var(--serif-cn);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+  main { max-width: 720px; margin: 0 auto; }
+
+  .cover { padding: 96px 0 56px; border-bottom: 1px solid var(--hairline); }
+  .kicker {
+    font-family: var(--serif-en);
+    font-size: 12px; letter-spacing: 0.18em;
+    color: var(--accent); text-transform: uppercase; margin-bottom: 28px;
+  }
+  .cover h1 {
+    font-size: 56px; font-weight: 600; line-height: 1.12;
+    letter-spacing: -0.02em; color: var(--ink); margin-bottom: 18px;
+  }
+  .cover .sub { font-size: 19px; color: var(--muted); margin-bottom: 44px; }
+  .cover .amount {
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 34px; letter-spacing: 0.01em;
+    color: var(--accent); margin-bottom: 44px;
+  }
+  .cover .meta {
+    display: flex; gap: 28px;
+    font-family: var(--serif-en);
+    font-size: 12.5px; letter-spacing: 0.06em; color: var(--muted);
+  }
+
+  .howto { padding: 56px 0; border-bottom: 1px solid var(--hairline); }
+  .howto h2 { font-size: 22px; font-weight: 600; color: var(--ink); letter-spacing: 0.02em; margin-bottom: 18px; }
+  .howto p { margin-bottom: 14px; }
+  .howto .steps { margin: 24px 0 0; }
+  .howto .step {
+    padding: 14px 0; border-top: 1px solid var(--hairline);
+    display: flex; gap: 18px; align-items: baseline;
+  }
+  .howto .step .no { font-family: var(--serif-en); font-size: 13px; color: var(--muted); min-width: 26px; }
+  .howto .step strong { color: var(--ink); font-weight: 590; margin-right: 8px; }
+  .howto .note { margin-top: 26px; font-size: 14.5px; color: var(--muted); font-style: italic; }
+
+  section.chapter { padding: 72px 0 24px; }
+  .ch-kicker {
+    font-family: var(--serif-en); font-size: 12px;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 10px;
+  }
+  .ch-rule { width: 36px; height: 1px; background: var(--accent); margin-bottom: 22px; }
+  section.chapter h2 {
+    font-size: 30px; font-weight: 600; letter-spacing: 0.01em;
+    color: var(--ink); margin-bottom: 10px;
+  }
+  .ch-intro { font-size: 15px; font-style: italic; color: var(--muted); margin-bottom: 30px; }
+
+  ol.lines { list-style: none; }
+  ol.lines li {
+    display: flex; gap: 20px; align-items: baseline;
+    padding: 15px 0; border-top: 1px solid var(--hairline);
+  }
+  ol.lines .no {
+    font-family: var(--serif-en); font-size: 13px;
+    color: var(--muted); min-width: 30px; letter-spacing: 0.04em;
+  }
+  ol.lines .line { font-size: 19px; line-height: 1.55; color: var(--ink); }
+
+  .colophon {
+    margin-top: 80px; padding: 40px 0 64px;
+    border-top: 1px solid var(--hairline);
+    font-size: 13.5px; color: var(--muted); line-height: 1.7;
+  }
+  .colophon .fin {
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 15px; color: var(--ink); margin-bottom: 12px;
+  }
+
+  .toc-side { display: none; }
+  @media (min-width: 1180px) {
+    .layout { display: grid; grid-template-columns: 208px minmax(0, 720px); gap: 56px; justify-content: center; align-items: start; }
+    .toc-side {
+      display: block; position: sticky; top: 0; align-self: start;
+      height: 100vh; padding-top: 150px; border-right: 1px solid var(--hairline);
+    }
+    .toc-side .toc { padding: 0 24px 0 0; border: none; }
+    .toc-side h2 { font-size: 13px; font-weight: 590; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 12px; }
+    .toc-side ol { list-style: none; }
+    .toc-side li a { display: flex; gap: 10px; align-items: baseline; padding: 4px 0; font-size: 13.5px; color: var(--body); text-decoration: none; }
+    .toc-side li a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+    .toc-side .n { font-family: var(--serif-en); font-size: 12px; color: var(--muted); min-width: 20px; }
+    .toc-inline { display: none; }
+  }
+  nav.toc-inline { padding: 48px 0; border-bottom: 1px solid var(--hairline); }
+  nav.toc-inline h2 { font-size: 13px; font-weight: 590; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 16px; }
+  nav.toc-inline ol { list-style: none; }
+  nav.toc-inline li a { display: flex; gap: 14px; align-items: baseline; padding: 7px 0; color: var(--body); text-decoration: none; }
+  nav.toc-inline li a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+  nav.toc-inline .n { font-family: var(--serif-en); font-size: 12.5px; color: var(--muted); min-width: 24px; }
+
+  @media (max-width: 640px) {
+    .cover { padding: 64px 0 40px; }
+    .cover h1 { font-size: 38px; }
+    .cover .amount { font-size: 26px; }
+    section.chapter { padding-top: 56px; }
+    ol.lines .line { font-size: 17.5px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+<div class="layout">
+
+<nav class="toc-side" aria-label="章节目录">
+  <div class="toc">
+    <h2>十章</h2>
+    <ol>
+      <li><a href="#ch1"><span class="n">01</span>先把话说开</a></li>
+      <li><a href="#ch2"><span class="n">02</span>你比你想的有底子</a></li>
+      <li><a href="#ch3"><span class="n">03</span>笨办法最灵</a></li>
+      <li><a href="#ch4"><span class="n">04</span>过好每一天的小账</a></li>
+      <li><a href="#ch5"><span class="n">05</span>多挣一份的路子</a></li>
+      <li><a href="#ch6"><span class="n">06</span>钱花在刀刃上</a></li>
+      <li><a href="#ch7"><span class="n">07</span>手艺是铁饭碗</a></li>
+      <li><a href="#ch8"><span class="n">08</span>人缘就是钱缘</a></li>
+      <li><a href="#ch9"><span class="n">09</span>别浪,稳住</a></li>
+      <li><a href="#ch10"><span class="n">10</span>说到做到</a></li>
+    </ol>
+  </div>
+</nav>
+
+<main>
+
+  <header class="cover">
+    <div class="kicker">Manifest · 显化手册 · 白话版 · 第一桶金篇</div>
+    <h1>十万美元的显化</h1>
+    <p class="sub">100 句实在话,陪打工人攒下第一个十万。</p>
+    <p class="amount">$100,000</p>
+    <div class="meta">
+      <span>2026 年 10 月</span>
+      <span>壹佰句</span>
+      <span>拾章</span>
+    </div>
+  </header>
+
+  <section class="howto">
+    <h2>这本小册子怎么用</h2>
+    <p>十万美元,折合七十多万人民币。它是一套房的首付、一次说走就走的底气、或者一门小生意的本钱——对普通人来说,这是真正够得着的第一座山头。这本册子不谈大道理,只聊怎么把这座山头,一步一步踩在脚下。</p>
+    <div class="steps">
+      <div class="step"><span class="no">一</span><span><strong>早上念</strong>睁眼念当天 10 句,出声,跟唱歌一样,越念越顺。</span></div>
+      <div class="step"><span class="no">二</span><span><strong>抄一句</strong>挑最扎心那句抄下来,贴工位上、存成壁纸。</span></div>
+      <div class="step"><span class="no">三</span><span><strong>想五分</strong>闭眼把攒够那天的生活,从头到尾过一遍。</span></div>
+      <div class="step"><span class="no">四</span><span><strong>办一件</strong>睡前问自己:今天为它干了啥?记账一样记下来。</span></div>
+    </div>
+    <p class="note">想,是给方向;干,是给油钱。俩都到位,车才开得动。</p>
+  </section>
+
+  <nav class="toc toc-inline" aria-label="章节目录">
+    <h2>目录 · 拾章</h2>
+    <ol>
+      <li><a href="#ch1"><span class="n">01</span>先把话说开</a></li>
+      <li><a href="#ch2"><span class="n">02</span>你比你想的有底子</a></li>
+      <li><a href="#ch3"><span class="n">03</span>笨办法最灵</a></li>
+      <li><a href="#ch4"><span class="n">04</span>过好每一天的小账</a></li>
+      <li><a href="#ch5"><span class="n">05</span>多挣一份的路子</a></li>
+      <li><a href="#ch6"><span class="n">06</span>钱花在刀刃上</a></li>
+      <li><a href="#ch7"><span class="n">07</span>手艺是铁饭碗</a></li>
+      <li><a href="#ch8"><span class="n">08</span>人缘就是钱缘</a></li>
+      <li><a href="#ch9"><span class="n">09</span>别浪,稳住</a></li>
+      <li><a href="#ch10"><span class="n">10</span>说到做到</a></li>
+    </ol>
+  </nav>
+
+  <!-- 第一章 -->
+  <section class="chapter" id="ch1">
+    <div class="ch-kicker">Chapter 01</div>
+    <div class="ch-rule"></div>
+    <h2>先把话说开</h2>
+    <p class="ch-intro">十万美元折合七十多万人民币——不是梦,是个攒得出来的数。</p>
+    <ol class="lines">
+      <li><span class="no">01</span><span class="line">十万美元,七十多万人民币,普通人踮踮脚真够得着的第一座山头。</span></li>
+      <li><span class="no">02</span><span class="line">第一个十万最难,熬过它,后面全是熟门熟路。</span></li>
+      <li><span class="no">03</span><span class="line">别被数字吓住,它就是一万次十块钱的积少成多。</span></li>
+      <li><span class="no">04</span><span class="line">我不等有钱了才开始理财,我从现在这几十块开始。</span></li>
+      <li><span class="no">05</span><span class="line">攒钱不丢人,月光才吃亏,这笔账我算得清。</span></li>
+      <li><span class="no">06</span><span class="line">我的第一个十万,是给未来的自己存的底气。</span></li>
+      <li><span class="no">07</span><span class="line">数字会说话:每天省三十块,一年就是一万多。</span></li>
+      <li><span class="no">08</span><span class="line">我不问来不来得及,我只问今天动没动。</span></li>
+      <li><span class="no">09</span><span class="line">财富这栋楼,第一块砖就是这个月的存款。</span></li>
+      <li><span class="no">10</span><span class="line">我图啥?图说话有底气,遇事不发慌。</span></li>
+    </ol>
+  </section>
+
+  <!-- 第二章 -->
+  <section class="chapter" id="ch2">
+    <div class="ch-kicker">Chapter 02</div>
+    <div class="ch-rule"></div>
+    <h2>你比你想的有底子</h2>
+    <p class="ch-intro">看不见的存款,也在计息。</p>
+    <ol class="lines">
+      <li><span class="no">11</span><span class="line">会做饭、会记账、能吃苦,这些都是我的隐形存款。</span></li>
+      <li><span class="no">12</span><span class="line">开始攒钱不需要谁批准,我自己说了算。</span></li>
+      <li><span class="no">13</span><span class="line">手机里那点余额,是我的第一支小部队。</span></li>
+      <li><span class="no">14</span><span class="line">我没背景,但我有背影——一直在往前走的那种。</span></li>
+      <li><span class="no">15</span><span class="line">别人的起点在高楼,我的起点是今天,不算晚。</span></li>
+      <li><span class="no">16</span><span class="line">我不是"暂时没钱的人",我是"正在攒钱的人"。</span></li>
+      <li><span class="no">17</span><span class="line">我这双手没闲过,它们值这个价。</span></li>
+      <li><span class="no">18</span><span class="line">家人一句"别累着",就是我最大的资产。</span></li>
+      <li><span class="no">19</span><span class="line">我把自卑换成账本,一页一页把它写满。</span></li>
+      <li><span class="no">20</span><span class="line">发到我手里的是普通牌,但我的牌技每天都在涨。</span></li>
+    </ol>
+  </section>
+
+  <!-- 第三章 -->
+  <section class="chapter" id="ch3">
+    <div class="ch-kicker">Chapter 03</div>
+    <div class="ch-rule"></div>
+    <h2>笨办法最灵</h2>
+    <p class="ch-intro">攒钱没有高招,只有笨功夫。</p>
+    <ol class="lines">
+      <li><span class="no">21</span><span class="line">工资到账先存一成,剩下的才是生活费,顺序不能乱。</span></li>
+      <li><span class="no">22</span><span class="line">我给钱起名字:这笔是房租,那笔是学费,各归各位。</span></li>
+      <li><span class="no">23</span><span class="line">攒钱像养花,天天看没动静,一个季度一看吓一跳。</span></li>
+      <li><span class="no">24</span><span class="line">购物车晾三天,大半东西自己就凉了。</span></li>
+      <li><span class="no">25</span><span class="line">我用信用卡的额度,不让它用我的下个月。</span></li>
+      <li><span class="no">26</span><span class="line">自动转账是个好东西,把钱藏到看不见的地方最安全。</span></li>
+      <li><span class="no">27</span><span class="line">我不为打折买东西,只买本来就打算买的打折货。</span></li>
+      <li><span class="no">28</span><span class="line">一杯奶茶三十,一年一万——下单前我把这数想一遍。</span></li>
+      <li><span class="no">29</span><span class="line">小钱是溪流,攒着攒着就成河。</span></li>
+      <li><span class="no">30</span><span class="line">存钱进度条每涨一格,我都截屏纪念。</span></li>
+    </ol>
+  </section>
+
+  <!-- 第四章 -->
+  <section class="chapter" id="ch4">
+    <div class="ch-kicker">Chapter 04</div>
+    <div class="ch-rule"></div>
+    <h2>过好每一天的小账</h2>
+    <p class="ch-intro">大目标拆到今天,全是小动作。</p>
+    <ol class="lines">
+      <li><span class="no">31</span><span class="line">出门自带一杯水,一年省出的钱够换部新手机。</span></li>
+      <li><span class="no">32</span><span class="line">通勤路上听的课,是悄悄涨薪的工资单。</span></li>
+      <li><span class="no">33</span><span class="line">我把地铁时间变成移动课堂。</span></li>
+      <li><span class="no">34</span><span class="line">午饭自己带两天,周五下馆子都更香。</span></li>
+      <li><span class="no">35</span><span class="line">睡前三分钟记三笔账,心里清清爽爽。</span></li>
+      <li><span class="no">36</span><span class="line">周末接个小单摆个小摊,都是给梦想打工。</span></li>
+      <li><span class="no">37</span><span class="line">我不为钱熬夜,攒的是本钱,本钱不能先亏。</span></li>
+      <li><span class="no">38</span><span class="line">少刷一小时短视频,多看十页书,就赚了一小时。</span></li>
+      <li><span class="no">39</span><span class="line">把"改天再说"改成"今天就办"。</span></li>
+      <li><span class="no">40</span><span class="line">日拱一卒,功不唐捐,老话不骗人。</span></li>
+    </ol>
+  </section>
+
+  <!-- 第五章 -->
+  <section class="chapter" id="ch5">
+    <div class="ch-kicker">Chapter 05</div>
+    <div class="ch-rule"></div>
+    <h2>多挣一份的路子</h2>
+    <p class="ch-intro">开源没有标准答案,只有你的答案。</p>
+    <ol class="lines">
+      <li><span class="no">41</span><span class="line">主业求稳,副业求变,两条腿走路才踏实。</span></li>
+      <li><span class="no">42</span><span class="line">我把手艺挂上网,五湖四海都是客户。</span></li>
+      <li><span class="no">43</span><span class="line">闲置的物件能变现,闲置的脑子更能。</span></li>
+      <li><span class="no">44</span><span class="line">我不嫌第一单只有几十块,那是从零到一的门票。</span></li>
+      <li><span class="no">45</span><span class="line">会做饭能教做饭,会拍照能教拍照,我会的都有人需要。</span></li>
+      <li><span class="no">46</span><span class="line">我多问一句"还有别的活吗",机会就多一寸。</span></li>
+      <li><span class="no">47</span><span class="line">涨薪的底气是业绩,不是苦劳,我攒业绩。</span></li>
+      <li><span class="no">48</span><span class="line">跳槽不是逃跑,是带着本事换个更高的台子。</span></li>
+      <li><span class="no">49</span><span class="line">我把爱好练到有人愿意付钱的那一步。</span></li>
+      <li><span class="no">50</span><span class="line">这条路堵了我就换那条,方向不变,人不停。</span></li>
+    </ol>
+  </section>
+
+  <!-- 第六章 -->
+  <section class="chapter" id="ch6">
+    <div class="ch-kicker">Chapter 06</div>
+    <div class="ch-rule"></div>
+    <h2>钱花在刀刃上</h2>
+    <p class="ch-intro">会花和会攒,是同一门课。</p>
+    <ol class="lines">
+      <li><span class="no">51</span><span class="line">大件三思,小件随心,账本永远诚实。</span></li>
+      <li><span class="no">52</span><span class="line">我买好用的,不买好看没用的摆设。</span></li>
+      <li><span class="no">53</span><span class="line">学习的钱最值花,它是唯一稳赚的投资。</span></li>
+      <li><span class="no">54</span><span class="line">花在健康上的钱,将来都会省回来。</span></li>
+      <li><span class="no">55</span><span class="line">请客可以,但不为面子透支。</span></li>
+      <li><span class="no">56</span><span class="line">给爸妈买东西不眨眼——这是存进良心的理财。</span></li>
+      <li><span class="no">57</span><span class="line">我的钱伺候我的日子,不是我的日子伺候账单。</span></li>
+      <li><span class="no">58</span><span class="line">下单前问一句:不用它会怎样?多数答案是"没啥"。</span></li>
+      <li><span class="no">59</span><span class="line">我攒的不只是钱,是随时可以说"不"的底气。</span></li>
+      <li><span class="no">60</span><span class="line">每笔开销过后问自己一句:值吗?</span></li>
+    </ol>
+  </section>
+
+  <!-- 第七章 -->
+  <section class="chapter" id="ch7">
+    <div class="ch-kicker">Chapter 07</div>
+    <div class="ch-rule"></div>
+    <h2>手艺是铁饭碗</h2>
+    <p class="ch-intro">平台会变,手艺跟着人走。</p>
+    <ol class="lines">
+      <li><span class="no">61</span><span class="line">行行出状元,我这行我认真钻。</span></li>
+      <li><span class="no">62</span><span class="line">老板换了一个又一个,手艺跟了我一年又一年。</span></li>
+      <li><span class="no">63</span><span class="line">我不怕变动,我的技能在市场上一直有价。</span></li>
+      <li><span class="no">64</span><span class="line">下班后的一小时,是给未来自己的加班。</span></li>
+      <li><span class="no">65</span><span class="line">我把工作当作品做,不当任务交。</span></li>
+      <li><span class="no">66</span><span class="line">别人摸鱼我练功,时间会替我们拉开差距。</span></li>
+      <li><span class="no">67</span><span class="line">我的技术我定价,干得好就该拿得多。</span></li>
+      <li><span class="no">68</span><span class="line">证书考一个是一个,都是敲门砖。</span></li>
+      <li><span class="no">69</span><span class="line">我做一行钻一行,钻到别人愿意买单。</span></li>
+      <li><span class="no">70</span><span class="line">手艺人的账最简单:活儿好,钱就来。</span></li>
+    </ol>
+  </section>
+
+  <!-- 第八章 -->
+  <section class="chapter" id="ch8">
+    <div class="ch-kicker">Chapter 08</div>
+    <div class="ch-rule"></div>
+    <h2>人缘就是钱缘</h2>
+    <p class="ch-intro">机会常常穿着熟人的衣服敲门。</p>
+    <ol class="lines">
+      <li><span class="no">71</span><span class="line">我说话算数,这是最贵的信用。</span></li>
+      <li><span class="no">72</span><span class="line">朋友多了路好走,老话是真话。</span></li>
+      <li><span class="no">73</span><span class="line">我不占人便宜,便宜占多了路就窄了。</span></li>
+      <li><span class="no">74</span><span class="line">有人提携我,我记恩;我提携别人,我乐意。</span></li>
+      <li><span class="no">75</span><span class="line">群里我多帮忙,不潜水,也不抢戏。</span></li>
+      <li><span class="no">76</span><span class="line">我的口碑是我最大的广告位。</span></li>
+      <li><span class="no">77</span><span class="line">请教不丢人,装懂才误事。</span></li>
+      <li><span class="no">78</span><span class="line">我把抱怨的话咽下去,把请教的话说出来。</span></li>
+      <li><span class="no">79</span><span class="line">邻里和气、同事和睦,都是隐形福利。</span></li>
+      <li><span class="no">80</span><span class="line">我认真对待每个人,不知道谁会递来机会。</span></li>
+    </ol>
+  </section>
+
+  <!-- 第九章 -->
+  <section class="chapter" id="ch9">
+    <div class="ch-kicker">Chapter 09</div>
+    <div class="ch-rule"></div>
+    <h2>别浪,稳住</h2>
+    <p class="ch-intro">攒钱路上最大的坑,是自己折腾自己。</p>
+    <ol class="lines">
+      <li><span class="no">81</span><span class="line">攒钱路上最大的敌人是瞎折腾,我稳住。</span></li>
+      <li><span class="no">82</span><span class="line">收益喊得越响,我捂得越紧。</span></li>
+      <li><span class="no">83</span><span class="line">不懂的不碰,懂了的才下手。</span></li>
+      <li><span class="no">84</span><span class="line">暴富的故事听听就好,我的剧本按集更新。</span></li>
+      <li><span class="no">85</span><span class="line">我不孤注一掷,我分批下注,细水长流。</span></li>
+      <li><span class="no">86</span><span class="line">焦虑的时候不决策,先睡一觉。</span></li>
+      <li><span class="no">87</span><span class="line">比较是偷幸福的贼,我把它拒之门外。</span></li>
+      <li><span class="no">88</span><span class="line">慢一点没关系,别停下就行。</span></li>
+      <li><span class="no">89</span><span class="line">我守得住寂寞,才接得住热闹。</span></li>
+      <li><span class="no">90</span><span class="line">稳不是胆小,是知道自己要什么。</span></li>
+    </ol>
+  </section>
+
+  <!-- 第十章 -->
+  <section class="chapter" id="ch10">
+    <div class="ch-kicker">Chapter 10</div>
+    <div class="ch-rule"></div>
+    <h2>说到做到</h2>
+    <p class="ch-intro">最后十句,把名字签上。</p>
+    <ol class="lines">
+      <li><span class="no">91</span><span class="line">我把话说这儿:第一个十万美元,我攒定了。</span></li>
+      <li><span class="no">92</span><span class="line">从这个月工资到账开始,存下第一笔。</span></li>
+      <li><span class="no">93</span><span class="line">我不喊口号,我翻账本。</span></li>
+      <li><span class="no">94</span><span class="line">十万之后还有二十万,路越走越宽。</span></li>
+      <li><span class="no">95</span><span class="line">三年后的我,会谢现在这个没偷懒的我。</span></li>
+      <li><span class="no">96</span><span class="line">我不跟运气赌,我跟日历走。</span></li>
+      <li><span class="no">97</span><span class="line">每月一号,是我和未来拉钩的日子。</span></li>
+      <li><span class="no">98</span><span class="line">十万是台阶,不是天花板。</span></li>
+      <li><span class="no">99</span><span class="line">钱是攒出来的,更是挣出来的,我两手都硬。</span></li>
+      <li><span class="no">100</span><span class="line">说干就干,今天就是第一集。</span></li>
+    </ol>
+  </section>
+
+  <footer class="colophon">
+    <p class="fin">— 第一个十万最难,也最甜;攒下的从来不只是钱。 —</p>
+    <p>《十万美元的显化》白话版 · 100 句肯定语 · 2026 年 10 月。本手册是攒钱路上的小工具,句子拿来念、拿来抄都行;真金白银还得靠真本事、真行动。系列前三版(一亿版、一千万版、一百万版)保留在同目录,可对照使用。由 eaco SGD + MYR overseas group 编制
+
+eaco CA: DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH</p>
+  </footer>
+
+</main>
+
+</div>
+</div>
+</body>
+</html>
